@@ -12,7 +12,7 @@ const Appbar = () => {
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -42,12 +42,44 @@ const Appbar = () => {
                 <LayoutDashboard size={20} /> Dashboard
               </a>
             </li>
+            <li>
+              <a onClick={() => navigate_to("/factory")}>
+                <Factory size={20} /> Factory
+              </a>
+            </li>
+            <li>
+              <a onClick={() => navigate_to("/about")}>
+                <Info size={20} /> About
+              </a>
+            </li>
           </ul>
         </div>
-        <a className="font-bold text-2xl">Glass Mask</a>
+        <a className="btn btn-ghost normal-case text-xl">App01</a>
       </div>
-      <div className="navbar-center"></div>
-      <div className="navbar-end"></div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <a onClick={() => navigate_to("/")}>
+              <Home size={20} /> Home
+            </a>
+          </li>
+          <li>
+            <a onClick={() => navigate_to("/dashboard")}>
+              <LayoutDashboard size={20} /> Dashboard
+            </a>
+          </li>
+          <li>
+            <a onClick={() => navigate_to("/about")}>
+              <Info size={20} /> About
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end">
+        <button className="btn btn-ghost btn-circle">
+          <User size={20} />
+        </button>
+      </div>
     </div>
   );
 };
