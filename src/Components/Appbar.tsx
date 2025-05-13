@@ -8,13 +8,20 @@ const Appbar = () => {
   };
 
   return (
-    <div className="flex gap-2 bg-slate-600 justify-between">
-      <div className="flex gap-2">
-        <div className="">😈</div>
-        <button onClick={() => navigate_to("/")}>Home</button>
-        <div onClick={() => navigate_to("/dashboard")}>Dashboard</div>
+    <div className="flex justify-between items-center bg-slate-600 px-4 py-2 text-white">
+      <div className="flex gap-4 items-center">
+        <div className="text-xl">😈</div>
+        <button onClick={() => navigate_to("/app")} className="hover:underline">
+          Home
+        </button>
+        <div
+          onClick={() => navigate_to("/app/dashboard")}
+          className="cursor-pointer hover:underline"
+        >
+          Dashboard
+        </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-4 items-center">
         <div>🏭</div>
         <div>👤</div>
       </div>

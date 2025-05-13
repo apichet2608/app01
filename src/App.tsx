@@ -1,29 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import Dashboard from "./pages/Dashboard/main/page";
 import Home from "./pages/Home/main/page";
-import Appbar from "./Components/Appbar";
+import NotFound from "./pages/Notfound/main/page";
+import Layout from "./layout";
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Appbar />
         <Routes>
-          <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Navigate to="/app" replace />} />
+            <Route path="/app" element={<Home />} />
+            <Route path="/app/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
 };
 export default App;
-
-const NotFound = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen">
-    <h1 className="text-6xl font-bold text-gray-800">404</h1>
-    <h2 className="text-3xl font-bold text-gray-600 mt-4">Page Not Found</h2>
-    <p className="text-gray-500 mt-2">
-      The page you're looking for doesn't exist.
-    </p>
-  </div>
-);
