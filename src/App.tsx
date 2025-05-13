@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard/main/page";
 import Home from "./pages/Home/main/page";
 import NotFound from "./pages/Notfound/main/page";
 import Layout from "./layout";
+
 const App = () => {
   return (
     <>

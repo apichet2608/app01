@@ -22,8 +22,8 @@ const Appbar = () => {
         </div>
       </div>
       <div className="flex gap-4 items-center">
-        <div>🏭</div>
-        <div>👤</div>
+        <div className="btn">🏭</div>
+        <div className="btn">👤</div>
       </div>
     </div>
   );
