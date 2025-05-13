@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import About from "./pages/Abot/main/page";
 import Dashboard from "./pages/Dashboard/main/page";
 import Home from "./pages/Home/main/page";
 import Appbar from "./Components/Appbar";
@@ -11,9 +10,7 @@ const App = () => {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/about" element={<About />} /> */}
         </Routes>
       </BrowserRouter>
     </>
