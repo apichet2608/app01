@@ -5,7 +5,6 @@ import { Route_Path } from "./Route";
 
 export default function Layout() {
   const location = useLocation();
-
   const appbarPaths = Route_Path.filter((route) => route.path !== "*").map(
     (route) => route.path
   );
