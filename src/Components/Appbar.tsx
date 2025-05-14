@@ -20,6 +20,12 @@ const Appbar = () => {
         >
           Dashboard
         </div>
+        <div
+          onClick={() => navigate_to("/app/testnotfound")}
+          className="cursor-pointer hover:underline"
+        >
+          ❌
+        </div>
       </div>
       <div className="flex gap-4 items-center">
         <div className="btn">🏭</div>

@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import Dashboard from "./pages/Dashboard/main/page";
-import Home from "./pages/Home/main/page";
-import NotFound from "./pages/Notfound/main/page";
 import Layout from "./layout";
+import { Route_Path } from "./Route";
+
+interface Route_Path {
+  path: string;
+  element: React.ReactNode;
+}
 
 const App = () => {
   return (
@@ -11,9 +14,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Navigate to="/app" replace />} />
-            <Route path="/app" element={<Home />} />
-            <Route path="/app/dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NotFound />} />
+            {Route_Path.map((route: Route_Path, index: number) => {
+              return (
+                <Route key={index} path={route.path} element={route.element} />
+              );
+            })}
           </Route>
         </Routes>
       </BrowserRouter>
